@@ -1,15 +1,15 @@
 //
-//  ODSNetworkingTests.swift
-//  ODSNetworkingTests
+//  ODSNetworkingiOSTests.swift
+//  ODSNetworkingiOSTests
 //
 //  Created by Orjan De Smet on 27/04/16.
 //  Copyright © 2016 Orjan De Smet. All rights reserved.
 //
 
 import XCTest
-@testable import ODSNetworking
+@testable import ODSNetworkingiOS
 
-class ODSNetworkingTests: XCTestCase {
+class ODSNetworkingiOSTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -7,43 +7,82 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8FF976E61CD11BB8005F5A70 /* ODSNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FF976E51CD11BB8005F5A70 /* ODSNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8FF976ED1CD11BB8005F5A70 /* ODSNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF976E21CD11BB8005F5A70 /* ODSNetworking.framework */; };
-		8FF976F21CD11BB8005F5A70 /* ODSNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF976F11CD11BB8005F5A70 /* ODSNetworkingTests.swift */; };
+		8FF977041CD11C3C005F5A70 /* ODSNetworkingtvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FF977031CD11C3C005F5A70 /* ODSNetworkingtvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FF9770B1CD11C3C005F5A70 /* ODSNetworkingtvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF977011CD11C3C005F5A70 /* ODSNetworkingtvOS.framework */; };
+		8FF977101CD11C3C005F5A70 /* ODSNetworkingtvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF9770F1CD11C3C005F5A70 /* ODSNetworkingtvOSTests.swift */; };
+		8FF977271CD11C5D005F5A70 /* ODSNetworkingiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF9771D1CD11C5D005F5A70 /* ODSNetworkingiOS.framework */; };
+		8FF9772C1CD11C5D005F5A70 /* ODSNetworkingiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF9772B1CD11C5D005F5A70 /* ODSNetworkingiOSTests.swift */; };
+		8FF977351CD11C9C005F5A70 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FF977341CD11C9C005F5A70 /* Cartfile */; };
+		8FF977361CD11C9C005F5A70 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 8FF977341CD11C9C005F5A70 /* Cartfile */; };
+		8FF977381CD11D0D005F5A70 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF977371CD11D0D005F5A70 /* CocoaAsyncSocket.framework */; };
+		8FF9773A1CD11D19005F5A70 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF977391CD11D19005F5A70 /* CocoaAsyncSocket.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8FF976EE1CD11BB8005F5A70 /* PBXContainerItemProxy */ = {
+		8FF9770C1CD11C3C005F5A70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8FF976D91CD11BB8005F5A70 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8FF976E11CD11BB8005F5A70;
-			remoteInfo = ODSNetworking;
+			remoteGlobalIDString = 8FF977001CD11C3C005F5A70;
+			remoteInfo = ODSNetworkingtvOS;
+		};
+		8FF977281CD11C5D005F5A70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FF976D91CD11BB8005F5A70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FF9771C1CD11C5D005F5A70;
+			remoteInfo = ODSNetworkingiOS;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8FF976E21CD11BB8005F5A70 /* ODSNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ODSNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FF976E51CD11BB8005F5A70 /* ODSNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ODSNetworking.h; sourceTree = "<group>"; };
-		8FF976E71CD11BB8005F5A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FF976EC1CD11BB8005F5A70 /* ODSNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ODSNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FF976F11CD11BB8005F5A70 /* ODSNetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODSNetworkingTests.swift; sourceTree = "<group>"; };
-		8FF976F31CD11BB8005F5A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FF977011CD11C3C005F5A70 /* ODSNetworkingtvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ODSNetworkingtvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF977031CD11C3C005F5A70 /* ODSNetworkingtvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ODSNetworkingtvOS.h; sourceTree = "<group>"; };
+		8FF977051CD11C3C005F5A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FF9770A1CD11C3C005F5A70 /* ODSNetworkingtvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ODSNetworkingtvOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF9770F1CD11C3C005F5A70 /* ODSNetworkingtvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODSNetworkingtvOSTests.swift; sourceTree = "<group>"; };
+		8FF977111CD11C3C005F5A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FF9771D1CD11C5D005F5A70 /* ODSNetworkingiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ODSNetworkingiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF9771F1CD11C5D005F5A70 /* ODSNetworkingiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ODSNetworkingiOS.h; sourceTree = "<group>"; };
+		8FF977211CD11C5D005F5A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FF977261CD11C5D005F5A70 /* ODSNetworkingiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ODSNetworkingiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF9772B1CD11C5D005F5A70 /* ODSNetworkingiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODSNetworkingiOSTests.swift; sourceTree = "<group>"; };
+		8FF9772D1CD11C5D005F5A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FF977341CD11C9C005F5A70 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		8FF977371CD11D0D005F5A70 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/tvOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		8FF977391CD11D19005F5A70 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8FF976DE1CD11BB8005F5A70 /* Frameworks */ = {
+		8FF976FD1CD11C3C005F5A70 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FF977381CD11D0D005F5A70 /* CocoaAsyncSocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8FF976E91CD11BB8005F5A70 /* Frameworks */ = {
+		8FF977071CD11C3C005F5A70 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FF976ED1CD11BB8005F5A70 /* ODSNetworking.framework in Frameworks */,
+				8FF9770B1CD11C3C005F5A70 /* ODSNetworkingtvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF977191CD11C5D005F5A70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF9773A1CD11D19005F5A70 /* CocoaAsyncSocket.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF977231CD11C5D005F5A70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF977271CD11C5D005F5A70 /* ODSNetworkingiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,8 +92,13 @@
 		8FF976D81CD11BB8005F5A70 = {
 			isa = PBXGroup;
 			children = (
-				8FF976E41CD11BB8005F5A70 /* ODSNetworking */,
-				8FF976F01CD11BB8005F5A70 /* ODSNetworkingTests */,
+				8FF977391CD11D19005F5A70 /* CocoaAsyncSocket.framework */,
+				8FF977371CD11D0D005F5A70 /* CocoaAsyncSocket.framework */,
+				8FF977341CD11C9C005F5A70 /* Cartfile */,
+				8FF977021CD11C3C005F5A70 /* ODSNetworkingtvOS */,
+				8FF9770E1CD11C3C005F5A70 /* ODSNetworkingtvOSTests */,
+				8FF9771E1CD11C5D005F5A70 /* ODSNetworkingiOS */,
+				8FF9772A1CD11C5D005F5A70 /* ODSNetworkingiOSTests */,
 				8FF976E31CD11BB8005F5A70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,78 +106,141 @@
 		8FF976E31CD11BB8005F5A70 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8FF976E21CD11BB8005F5A70 /* ODSNetworking.framework */,
-				8FF976EC1CD11BB8005F5A70 /* ODSNetworkingTests.xctest */,
+				8FF977011CD11C3C005F5A70 /* ODSNetworkingtvOS.framework */,
+				8FF9770A1CD11C3C005F5A70 /* ODSNetworkingtvOSTests.xctest */,
+				8FF9771D1CD11C5D005F5A70 /* ODSNetworkingiOS.framework */,
+				8FF977261CD11C5D005F5A70 /* ODSNetworkingiOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8FF976E41CD11BB8005F5A70 /* ODSNetworking */ = {
+		8FF977021CD11C3C005F5A70 /* ODSNetworkingtvOS */ = {
 			isa = PBXGroup;
 			children = (
-				8FF976E51CD11BB8005F5A70 /* ODSNetworking.h */,
-				8FF976E71CD11BB8005F5A70 /* Info.plist */,
+				8FF977031CD11C3C005F5A70 /* ODSNetworkingtvOS.h */,
+				8FF977051CD11C3C005F5A70 /* Info.plist */,
 			);
-			path = ODSNetworking;
+			path = ODSNetworkingtvOS;
 			sourceTree = "<group>";
 		};
-		8FF976F01CD11BB8005F5A70 /* ODSNetworkingTests */ = {
+		8FF9770E1CD11C3C005F5A70 /* ODSNetworkingtvOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				8FF976F11CD11BB8005F5A70 /* ODSNetworkingTests.swift */,
-				8FF976F31CD11BB8005F5A70 /* Info.plist */,
+				8FF9770F1CD11C3C005F5A70 /* ODSNetworkingtvOSTests.swift */,
+				8FF977111CD11C3C005F5A70 /* Info.plist */,
 			);
-			path = ODSNetworkingTests;
+			path = ODSNetworkingtvOSTests;
+			sourceTree = "<group>";
+		};
+		8FF9771E1CD11C5D005F5A70 /* ODSNetworkingiOS */ = {
+			isa = PBXGroup;
+			children = (
+				8FF9771F1CD11C5D005F5A70 /* ODSNetworkingiOS.h */,
+				8FF977211CD11C5D005F5A70 /* Info.plist */,
+			);
+			path = ODSNetworkingiOS;
+			sourceTree = "<group>";
+		};
+		8FF9772A1CD11C5D005F5A70 /* ODSNetworkingiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				8FF9772B1CD11C5D005F5A70 /* ODSNetworkingiOSTests.swift */,
+				8FF9772D1CD11C5D005F5A70 /* Info.plist */,
+			);
+			path = ODSNetworkingiOSTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		8FF976DF1CD11BB8005F5A70 /* Headers */ = {
+		8FF976FE1CD11C3C005F5A70 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FF976E61CD11BB8005F5A70 /* ODSNetworking.h in Headers */,
+				8FF977041CD11C3C005F5A70 /* ODSNetworkingtvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF9771A1CD11C5D005F5A70 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8FF976E11CD11BB8005F5A70 /* ODSNetworking */ = {
+		8FF977001CD11C3C005F5A70 /* ODSNetworkingtvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8FF976F61CD11BB8005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworking" */;
+			buildConfigurationList = 8FF977121CD11C3C005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworkingtvOS" */;
 			buildPhases = (
-				8FF976DD1CD11BB8005F5A70 /* Sources */,
-				8FF976DE1CD11BB8005F5A70 /* Frameworks */,
-				8FF976DF1CD11BB8005F5A70 /* Headers */,
-				8FF976E01CD11BB8005F5A70 /* Resources */,
+				8FF976FC1CD11C3C005F5A70 /* Sources */,
+				8FF976FD1CD11C3C005F5A70 /* Frameworks */,
+				8FF976FE1CD11C3C005F5A70 /* Headers */,
+				8FF976FF1CD11C3C005F5A70 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ODSNetworking;
-			productName = ODSNetworking;
-			productReference = 8FF976E21CD11BB8005F5A70 /* ODSNetworking.framework */;
+			name = ODSNetworkingtvOS;
+			productName = ODSNetworkingtvOS;
+			productReference = 8FF977011CD11C3C005F5A70 /* ODSNetworkingtvOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8FF976EB1CD11BB8005F5A70 /* ODSNetworkingTests */ = {
+		8FF977091CD11C3C005F5A70 /* ODSNetworkingtvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8FF976F91CD11BB8005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworkingTests" */;
+			buildConfigurationList = 8FF977151CD11C3C005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworkingtvOSTests" */;
 			buildPhases = (
-				8FF976E81CD11BB8005F5A70 /* Sources */,
-				8FF976E91CD11BB8005F5A70 /* Frameworks */,
-				8FF976EA1CD11BB8005F5A70 /* Resources */,
+				8FF977061CD11C3C005F5A70 /* Sources */,
+				8FF977071CD11C3C005F5A70 /* Frameworks */,
+				8FF977081CD11C3C005F5A70 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8FF976EF1CD11BB8005F5A70 /* PBXTargetDependency */,
+				8FF9770D1CD11C3C005F5A70 /* PBXTargetDependency */,
 			);
-			name = ODSNetworkingTests;
-			productName = ODSNetworkingTests;
-			productReference = 8FF976EC1CD11BB8005F5A70 /* ODSNetworkingTests.xctest */;
+			name = ODSNetworkingtvOSTests;
+			productName = ODSNetworkingtvOSTests;
+			productReference = 8FF9770A1CD11C3C005F5A70 /* ODSNetworkingtvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8FF9771C1CD11C5D005F5A70 /* ODSNetworkingiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FF9772E1CD11C5D005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworkingiOS" */;
+			buildPhases = (
+				8FF977181CD11C5D005F5A70 /* Sources */,
+				8FF977191CD11C5D005F5A70 /* Frameworks */,
+				8FF9771A1CD11C5D005F5A70 /* Headers */,
+				8FF9771B1CD11C5D005F5A70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ODSNetworkingiOS;
+			productName = ODSNetworkingiOS;
+			productReference = 8FF9771D1CD11C5D005F5A70 /* ODSNetworkingiOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8FF977251CD11C5D005F5A70 /* ODSNetworkingiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FF977311CD11C5D005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworkingiOSTests" */;
+			buildPhases = (
+				8FF977221CD11C5D005F5A70 /* Sources */,
+				8FF977231CD11C5D005F5A70 /* Frameworks */,
+				8FF977241CD11C5D005F5A70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FF977291CD11C5D005F5A70 /* PBXTargetDependency */,
+			);
+			name = ODSNetworkingiOSTests;
+			productName = ODSNetworkingiOSTests;
+			productReference = 8FF977261CD11C5D005F5A70 /* ODSNetworkingiOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -146,11 +253,19 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Orjan De Smet";
 				TargetAttributes = {
-					8FF976E11CD11BB8005F5A70 = {
+					8FF977001CD11C3C005F5A70 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = QV8SV37S6X;
 					};
-					8FF976EB1CD11BB8005F5A70 = {
+					8FF977091CD11C3C005F5A70 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = QV8SV37S6X;
+					};
+					8FF9771C1CD11C5D005F5A70 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = QV8SV37S6X;
+					};
+					8FF977251CD11C5D005F5A70 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = QV8SV37S6X;
 					};
@@ -168,21 +283,39 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8FF976E11CD11BB8005F5A70 /* ODSNetworking */,
-				8FF976EB1CD11BB8005F5A70 /* ODSNetworkingTests */,
+				8FF977001CD11C3C005F5A70 /* ODSNetworkingtvOS */,
+				8FF977091CD11C3C005F5A70 /* ODSNetworkingtvOSTests */,
+				8FF9771C1CD11C5D005F5A70 /* ODSNetworkingiOS */,
+				8FF977251CD11C5D005F5A70 /* ODSNetworkingiOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8FF976E01CD11BB8005F5A70 /* Resources */ = {
+		8FF976FF1CD11C3C005F5A70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF977351CD11C9C005F5A70 /* Cartfile in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF977081CD11C3C005F5A70 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8FF976EA1CD11BB8005F5A70 /* Resources */ = {
+		8FF9771B1CD11C5D005F5A70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF977361CD11C9C005F5A70 /* Cartfile in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF977241CD11C5D005F5A70 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -192,28 +325,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8FF976DD1CD11BB8005F5A70 /* Sources */ = {
+		8FF976FC1CD11C3C005F5A70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8FF976E81CD11BB8005F5A70 /* Sources */ = {
+		8FF977061CD11C3C005F5A70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FF976F21CD11BB8005F5A70 /* ODSNetworkingTests.swift in Sources */,
+				8FF977101CD11C3C005F5A70 /* ODSNetworkingtvOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF977181CD11C5D005F5A70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FF977221CD11C5D005F5A70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FF9772C1CD11C5D005F5A70 /* ODSNetworkingiOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8FF976EF1CD11BB8005F5A70 /* PBXTargetDependency */ = {
+		8FF9770D1CD11C3C005F5A70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8FF976E11CD11BB8005F5A70 /* ODSNetworking */;
-			targetProxy = 8FF976EE1CD11BB8005F5A70 /* PBXContainerItemProxy */;
+			target = 8FF977001CD11C3C005F5A70 /* ODSNetworkingtvOS */;
+			targetProxy = 8FF9770C1CD11C3C005F5A70 /* PBXContainerItemProxy */;
+		};
+		8FF977291CD11C5D005F5A70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FF9771C1CD11C5D005F5A70 /* ODSNetworkingiOS */;
+			targetProxy = 8FF977281CD11C5D005F5A70 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -309,54 +462,132 @@
 			};
 			name = Release;
 		};
-		8FF976F71CD11BB8005F5A70 /* Debug */ = {
+		8FF977131CD11C3C005F5A70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ODSNetworking/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = ODSNetworkingtvOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworking;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworkingtvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		8FF977141CD11C3C005F5A70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				INFOPLIST_FILE = ODSNetworkingtvOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworkingtvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		8FF977161CD11C3C005F5A70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ODSNetworkingtvOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworkingtvOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		8FF977171CD11C3C005F5A70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ODSNetworkingtvOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworkingtvOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		8FF9772F1CD11C5D005F5A70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ODSNetworkingiOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworkingiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		8FF976F81CD11BB8005F5A70 /* Release */ = {
+		8FF977301CD11C5D005F5A70 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ODSNetworking/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = ODSNetworkingiOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworking;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworkingiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		8FF976FA1CD11BB8005F5A70 /* Debug */ = {
+		8FF977321CD11C5D005F5A70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = ODSNetworkingTests/Info.plist;
+				INFOPLIST_FILE = ODSNetworkingiOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworkingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworkingiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		8FF976FB1CD11BB8005F5A70 /* Release */ = {
+		8FF977331CD11C5D005F5A70 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = ODSNetworkingTests/Info.plist;
+				INFOPLIST_FILE = ODSNetworkingiOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworkingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orjandesmet.ODSNetworkingiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -373,19 +604,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8FF976F61CD11BB8005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworking" */ = {
+		8FF977121CD11C3C005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworkingtvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8FF976F71CD11BB8005F5A70 /* Debug */,
-				8FF976F81CD11BB8005F5A70 /* Release */,
+				8FF977131CD11C3C005F5A70 /* Debug */,
+				8FF977141CD11C3C005F5A70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		8FF976F91CD11BB8005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworkingTests" */ = {
+		8FF977151CD11C3C005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworkingtvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8FF976FA1CD11BB8005F5A70 /* Debug */,
-				8FF976FB1CD11BB8005F5A70 /* Release */,
+				8FF977161CD11C3C005F5A70 /* Debug */,
+				8FF977171CD11C3C005F5A70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8FF9772E1CD11C5D005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworkingiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FF9772F1CD11C5D005F5A70 /* Debug */,
+				8FF977301CD11C5D005F5A70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8FF977311CD11C5D005F5A70 /* Build configuration list for PBXNativeTarget "ODSNetworkingiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FF977321CD11C5D005F5A70 /* Debug */,
+				8FF977331CD11C5D005F5A70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

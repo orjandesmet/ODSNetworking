@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ODSNetworkingiOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>ODSNetworkingtvOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +28,26 @@
 			<true/>
 		</dict>
 		<key>8FF976EB1CD11BB8005F5A70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8FF977001CD11C3C005F5A70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8FF977091CD11C3C005F5A70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8FF9771C1CD11C5D005F5A70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8FF977251CD11C5D005F5A70</key>
 		<dict>
 			<key>primary</key>
 			<true/>
