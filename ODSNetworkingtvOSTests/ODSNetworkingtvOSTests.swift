@@ -21,16 +21,30 @@ class ODSNetworkingtvOSTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPacketPacking() {
+        let a = ExamplePacket(data: "A test")
+        XCTAssertEqual(a.type, "ExamplePacket")
+        XCTAssertEqual(a.version, 1)
+        XCTAssertEqual(a.data, "A test")
+        
+        let b = ExamplePacket(dictionary: a.dictionary)
+        
+        XCTAssertEqual(a.type, b.type)
+        XCTAssertEqual(a.version, b.version)
+        XCTAssertEqual(a.data, b.data)
+        
+        let c = ExamplePacket(jsonData: a.json())
+        
+        XCTAssertEqual(a.type, c.type)
+        XCTAssertEqual(a.version, c.version)
+        XCTAssertEqual(a.data, c.data)
     }
     
-    func testPerformanceExample() {
+    /*func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {
             // Put the code you want to measure the time of here.
         }
-    }
+    }*/
     
 }
