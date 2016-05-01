@@ -1,5 +1,5 @@
 //
-//  ClientService.swift
+//  BrowserService.swift
 //  ODSNetworking
 //
 //  Created by Orjan De Smet on 30/04/16.

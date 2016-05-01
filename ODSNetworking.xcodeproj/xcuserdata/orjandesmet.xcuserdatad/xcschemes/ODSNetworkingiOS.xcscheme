@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8FF976E11CD11BB8005F5A70"
-               BuildableName = "ODSNetworking.framework"
-               BlueprintName = "ODSNetworking"
+               BlueprintIdentifier = "8FF9771C1CD11C5D005F5A70"
+               BuildableName = "ODSNetworkingiOS.framework"
+               BlueprintName = "ODSNetworkingiOS"
                ReferencedContainer = "container:ODSNetworking.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8FF976EB1CD11BB8005F5A70"
-               BuildableName = "ODSNetworkingTests.xctest"
-               BlueprintName = "ODSNetworkingTests"
+               BlueprintIdentifier = "8FF977251CD11C5D005F5A70"
+               BuildableName = "ODSNetworkingiOSTests.xctest"
+               BlueprintName = "ODSNetworkingiOSTests"
                ReferencedContainer = "container:ODSNetworking.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8FF976E11CD11BB8005F5A70"
-            BuildableName = "ODSNetworking.framework"
-            BlueprintName = "ODSNetworking"
+            BlueprintIdentifier = "8FF9771C1CD11C5D005F5A70"
+            BuildableName = "ODSNetworkingiOS.framework"
+            BlueprintName = "ODSNetworkingiOS"
             ReferencedContainer = "container:ODSNetworking.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8FF976E11CD11BB8005F5A70"
-            BuildableName = "ODSNetworking.framework"
-            BlueprintName = "ODSNetworking"
+            BlueprintIdentifier = "8FF9771C1CD11C5D005F5A70"
+            BuildableName = "ODSNetworkingiOS.framework"
+            BlueprintName = "ODSNetworkingiOS"
             ReferencedContainer = "container:ODSNetworking.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8FF976E11CD11BB8005F5A70"
-            BuildableName = "ODSNetworking.framework"
-            BlueprintName = "ODSNetworking"
+            BlueprintIdentifier = "8FF9771C1CD11C5D005F5A70"
+            BuildableName = "ODSNetworkingiOS.framework"
+            BlueprintName = "ODSNetworkingiOS"
             ReferencedContainer = "container:ODSNetworking.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

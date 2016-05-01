@@ -13,24 +13,25 @@ public enum HostingDomain : String {
     case Local = "local."
 }
 
-public protocol HostingService : NSNetServiceDelegate, GCDAsyncSocketDelegate
+public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDelegate
 {
-    var allowMultipleClients: Bool {get set}
-    var hostingDomain : HostingDomain {get set}
-    var type: String {get set}
-    var name: String {get set}
-    var clientSockets: [GCDAsyncSocket] {get set}
-    var hostingSocket: GCDAsyncSocket? {get set}
-    var service : NSNetService? {get set}
-    init(type: String, name: String)
-    func beginBroadcast()
-    func endBroadcast()
-}
-
-public extension HostingService {
+    var allowMultipleClients: Bool
+    var hostingDomain : HostingDomain
+    var type: String
+    var name: String
+    var clientSockets: [GCDAsyncSocket] = []
+    var hostingSocket: GCDAsyncSocket?
+    var service : NSNetService?
+    
+    public init(type: String, name: String, hostingDomain: HostingDomain = .Local, allowMultipleClients: Bool = true) {
+        self.type = type
+        self.name = name
+        self.hostingDomain = hostingDomain
+        self.allowMultipleClients = allowMultipleClients
+    }
     
     // Broadcasting
-    func beginBroadcast() {
+    public func beginBroadcast() {
         // Initialize GCDAsyncSocket
         hostingSocket = GCDAsyncSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
         
@@ -53,7 +54,7 @@ public extension HostingService {
         }
     }
     
-    func endBroadcast() {
+    public func endBroadcast() {
         // Disconnect with all devices
         for clientSocket in clientSockets
         {
@@ -71,25 +72,25 @@ public extension HostingService {
     
     func clearSocket(socket: GCDAsyncSocket)
     {
-        NSLog("Cleared socket %@:%hu", socket.connectedHost, socket.connectedPort);
         if (socket.isConnected)
         {
+            NSLog("Cleared socket %@:%hu", socket.connectedHost, socket.connectedPort);            
             socket.disconnect()
         }
         socket.delegate = nil
     }
     
     // NSNetService delegate methods
-    func netServiceDidPublish(sender: NSNetService) {
+    public func netServiceDidPublish(sender: NSNetService) {
         NSLog("Bonjour Service Published: domain(%@) type(%@) name(%@) port(%i)", sender.domain, sender.type, sender.name, sender.port);
     }
     
-    func netService(sender: NSNetService, didNotPublish errorDict: [String : NSNumber]) {
+    public func netService(sender: NSNetService, didNotPublish errorDict: [String : NSNumber]) {
         NSLog("Failed to Publish Service: domain(%@) type(%@) name(%@) - %@", sender.domain, sender.type, sender.name, errorDict);
     }
     
     // GDAsyncSocket
-    func socket(sock: GCDAsyncSocket!, didAcceptNewSocket newSocket: GCDAsyncSocket!) {
+    public func socket(sock: GCDAsyncSocket!, didAcceptNewSocket newSocket: GCDAsyncSocket!) {
         NSLog("Accepted New Socket from %@:%hu", newSocket.connectedHost, newSocket.connectedPort);
         
         // Socket 
@@ -104,7 +105,7 @@ public extension HostingService {
         newSocket.readDataToLength(UInt(sizeof(Int64)), withTimeout: -1.0, tag: 0)
     }
     
-    func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
+    public func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
         
         if let index = clientSockets.indexOf(sock)
         {
@@ -114,7 +115,7 @@ public extension HostingService {
         }
     }
     
-    func sendPacket(packet: Jsonable, index: Int) {
+    public func sendPacket(packet: Jsonable, index: Int) {
         // Encode Packet Data
         let packetData = NSMutableData()
         let archiver = NSKeyedArchiver(forWritingWithMutableData: packetData)
