@@ -28,7 +28,7 @@ public extension Jsonable
         return ret
     }
     
-    func json() -> NSData {
+    public func json() -> NSData {
         do {
             let jsonData = try NSJSONSerialization.dataWithJSONObject(self.dictionary, options: NSJSONWritingOptions.PrettyPrinted)
             return jsonData
@@ -39,7 +39,7 @@ public extension Jsonable
         return NSData();
     }
     
-    init(jsonData: NSData) {
+    public init(jsonData: NSData) {
         var dict = [String: String]()
         do {
             let decoded = try NSJSONSerialization.JSONObjectWithData(jsonData, options: [])

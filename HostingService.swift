@@ -22,6 +22,7 @@ public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDele
     var clientSockets: [GCDAsyncSocket] = []
     var hostingSocket: GCDAsyncSocket?
     var service : NSNetService?
+    public var delegate : HostingServiceDelegate?
     
     public init(type: String, name: String, hostingDomain: HostingDomain = .Local, allowMultipleClients: Bool = true) {
         self.type = type
@@ -103,12 +104,14 @@ public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDele
         
         // Read Data from Socket
         newSocket.readDataToLength(UInt(sizeof(Int64)), withTimeout: -1.0, tag: 0)
+        delegate?.socketConnected(newSocket)
     }
     
     public func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
         
         if let index = clientSockets.indexOf(sock)
         {
+            delegate?.socketDisconnected(sock)
             NSLog("Socket disconnected with Error %@ with User Info %@.", err, err.userInfo)
             clearSocket(clientSockets[index])
             clientSockets.removeAtIndex(index)
@@ -116,12 +119,21 @@ public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDele
     }
     
     public func sendPacket(packet: Jsonable, index: Int) {
+        if index < clientSockets.count
+        {
+            let sock = clientSockets[index]
+            self.sendPacket(packet, sock: sock)
+        }
+    }
+    
+    public func sendPacket(packet: Jsonable, sock: GCDAsyncSocket) {
         // Encode Packet Data
-        let packetData = NSMutableData()
-        let archiver = NSKeyedArchiver(forWritingWithMutableData: packetData)
-        
-        archiver.encodeObject(packet.json(), forKey: "packet")
-        archiver.finishEncoding()
+        /*let packetData = NSMutableData()
+         let archiver = NSKeyedArchiver(forWritingWithMutableData: packetData)
+         
+         archiver.encodeObject(packet.json(), forKey: "packet")
+         archiver.finishEncoding()*/
+        let packetData = packet.json()
         
         // Initialize Buffer
         let buffer = NSMutableData()
@@ -133,10 +145,6 @@ public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDele
         buffer.appendBytes(packetData.bytes, length: packetData.length)
         
         // Write Buffer
-        if index < clientSockets.count
-        {
-            let sock = clientSockets[index]
-            sock.writeData(buffer, withTimeout: -1.0, tag: 0)
-        }
+        sock.writeData(buffer, withTimeout: -1.0, tag: 0)
     }
 }
