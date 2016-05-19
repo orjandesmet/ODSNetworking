@@ -12,4 +12,5 @@ import CocoaAsyncSocket
 public protocol HostingServiceDelegate {
     func socketConnected(sock: GCDAsyncSocket)
     func socketDisconnected(sock: GCDAsyncSocket)
+    func extractPacketData(data: NSData)
 }

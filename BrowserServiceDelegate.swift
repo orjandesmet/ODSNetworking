@@ -8,7 +8,8 @@
 
 import Foundation
 
-public protocol BrowserServiceDelegate {
-    func updateServices(services: [NSNetService])
-    func extractPacketData(data: NSData)
+@objc public protocol BrowserServiceDelegate {
+    optional func browsingDidEnd()
+    optional func browsingDidBegin()
+    func didUpdateServices(services: [NSNetService])
 }

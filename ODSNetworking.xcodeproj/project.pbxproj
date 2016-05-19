@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F1C123B1CEDCADE00EF2ADC /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C123A1CEDCADE00EF2ADC /* ClientService.swift */; };
+		8F1C123D1CEDCC6A00EF2ADC /* ClientServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C123C1CEDCC6A00EF2ADC /* ClientServiceDelegate.swift */; };
+		8F1C123F1CEDD2FB00EF2ADC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C123E1CEDD2FB00EF2ADC /* NetworkService.swift */; };
+		8F1C12401CEDD2FB00EF2ADC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C123E1CEDD2FB00EF2ADC /* NetworkService.swift */; };
 		8F224A551CD5F11F0006859F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F224A541CD5F11F0006859F /* CFNetwork.framework */; };
 		8F224A571CD5F1270006859F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F224A561CD5F1270006859F /* Security.framework */; };
 		8F7DA89F1CD561500013FFDB /* BrowserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DA89D1CD561500013FFDB /* BrowserService.swift */; };
@@ -80,6 +84,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8F1C123A1CEDCADE00EF2ADC /* ClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
+		8F1C123C1CEDCC6A00EF2ADC /* ClientServiceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientServiceDelegate.swift; sourceTree = "<group>"; };
+		8F1C123E1CEDD2FB00EF2ADC /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8F224A541CD5F11F0006859F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8F224A561CD5F1270006859F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8F7DA89D1CD561500013FFDB /* BrowserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserService.swift; sourceTree = "<group>"; };
@@ -154,6 +161,9 @@
 		8FF976D81CD11BB8005F5A70 = {
 			isa = PBXGroup;
 			children = (
+				8F1C123A1CEDCADE00EF2ADC /* ClientService.swift */,
+				8F1C123E1CEDD2FB00EF2ADC /* NetworkService.swift */,
+				8F1C123C1CEDCC6A00EF2ADC /* ClientServiceDelegate.swift */,
 				8FEAA7B91CD8BAFE00F7614C /* HostingServiceDelegate.swift */,
 				8FEAA7B61CD8BA8C00F7614C /* BrowserServiceDelegate.swift */,
 				8FF977341CD11C9C005F5A70 /* Cartfile */,
@@ -439,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1C123F1CEDD2FB00EF2ADC /* NetworkService.swift in Sources */,
 				8FF977421CD129A3005F5A70 /* HostingService.swift in Sources */,
 				8FF9773C1CD11E59005F5A70 /* ExamplePacket.swift in Sources */,
 				8FF9773F1CD11E75005F5A70 /* Jsonable.swift in Sources */,
@@ -459,10 +470,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FF977431CD129A3005F5A70 /* HostingService.swift in Sources */,
+				8F1C123D1CEDCC6A00EF2ADC /* ClientServiceDelegate.swift in Sources */,
 				8FF9773D1CD11E59005F5A70 /* ExamplePacket.swift in Sources */,
 				8FEAA7B71CD8BA8C00F7614C /* BrowserServiceDelegate.swift in Sources */,
+				8F1C12401CEDD2FB00EF2ADC /* NetworkService.swift in Sources */,
 				8FEAA7BC1CD8BAFE00F7614C /* HostingServiceDelegate.swift in Sources */,
 				8F7DA89F1CD561500013FFDB /* BrowserService.swift in Sources */,
+				8F1C123B1CEDCADE00EF2ADC /* ClientService.swift in Sources */,
 				8FF977401CD11E75005F5A70 /* Jsonable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

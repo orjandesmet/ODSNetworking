@@ -13,7 +13,7 @@ public enum HostingDomain : String {
     case Local = "local."
 }
 
-public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDelegate
+public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDelegate, NetworkService
 {
     var allowMultipleClients: Bool
     var hostingDomain : HostingDomain
@@ -126,25 +126,7 @@ public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDele
         }
     }
     
-    public func sendPacket(packet: Jsonable, sock: GCDAsyncSocket) {
-        // Encode Packet Data
-        /*let packetData = NSMutableData()
-         let archiver = NSKeyedArchiver(forWritingWithMutableData: packetData)
-         
-         archiver.encodeObject(packet.json(), forKey: "packet")
-         archiver.finishEncoding()*/
-        let packetData = packet.json()
-        
-        // Initialize Buffer
-        let buffer = NSMutableData()
-        
-        // Fill Buffer
-        var headerLength : Int64 = Int64(packetData.length)
-        
-        buffer.appendBytes(&headerLength, length: sizeof(Int64))
-        buffer.appendBytes(packetData.bytes, length: packetData.length)
-        
-        // Write Buffer
-        sock.writeData(buffer, withTimeout: -1.0, tag: 0)
+    public func parseBody(data: NSData) {
+        delegate?.extractPacketData(data)
     }
 }
