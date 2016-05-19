@@ -133,11 +133,11 @@ public class ClientService : NSObject, NSNetServiceDelegate, BrowserServiceDeleg
     public func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
         if (tag == 0) {
             let bodyLength : Int64 = self.parseHeader(data)
-            hostSocket!.readDataToLength(UInt(bodyLength), withTimeout: -1.0, tag: 1)
+            hostSocket!.readDataToLength(UInt(bodyLength), withTimeout: 30.0, tag: 1)
             
         } else if (tag == 1) {
             self.parseBody(data)
-            hostSocket!.readDataToLength(UInt(sizeof(Int64)), withTimeout: 30.0, tag: 0)
+            hostSocket!.readDataToLength(UInt(sizeof(Int64)), withTimeout: -1.0, tag: 0)
         }
     }
     
