@@ -8,7 +8,8 @@
 
 import Foundation
 
-public protocol ClientServiceDelegate {
-    func updateServices(services: [NSNetService])
+@objc public protocol ClientServiceDelegate {
     func extractPacketData(data: NSData)
+    optional func didConnectToHost(host: String)
+    optional func didDisconnect(err: NSError)
 }

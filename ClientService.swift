@@ -9,58 +9,14 @@
 import Foundation
 import CocoaAsyncSocket
 
-public class ClientService : NSObject, NSNetServiceDelegate, BrowserServiceDelegate, NetworkService {
-    
+public class ClientService : NSObject, NSNetServiceDelegate, NetworkService {
     var hostSocket: GCDAsyncSocket?
-    var type : String
-    var name : String
-    public var browserService: BrowserService?
     public var delegate : ClientServiceDelegate?
-    
-    public init(type: String, name: String)
-    {
-        self.type = type
-        self.name = name
-        super.init()
-    }
-    
-    public func browsingDidEnd() {
-        
-        if (hostSocket != nil && hostSocket!.isConnected)
-        {
-            hostSocket!.disconnect()
-            hostSocket!.delegate = nil
-            hostSocket = nil
-        }
-    }
     
     public func connectToService(service: NSNetService) {
         service.delegate = self
         service.resolveWithTimeout(30.0)
     }
-    
-    public func didUpdateServices(services: [NSNetService]) {
-        delegate?.updateServices(services)
-    }
-    
-    public func beginBrowsing() {
-        browserService = BrowserService(type: type, name: name)
-        if let browserService = browserService
-        {
-            browserService.delegate = self
-            browserService.beginBrowsing()
-        }
-    }
-    
-    public func endBrowsing() {
-        if let browserService = browserService
-        {
-            browserService.endBrowsing()
-            browserService.delegate = nil
-        }
-        browserService = nil
-    }
-    
     
     // MARK: - Service
     public func netService(sender: NSNetService, didNotResolve errorDict: [String : NSNumber]) {
@@ -116,6 +72,8 @@ public class ClientService : NSObject, NSNetServiceDelegate, BrowserServiceDeleg
         
         // Start Reading
         hostSocket!.readDataToLength(UInt(sizeof(Int64)), withTimeout: -1.0, tag: 0)
+        
+        delegate?.didConnectToHost?(host)
     }
     
     public func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
@@ -126,6 +84,8 @@ public class ClientService : NSObject, NSNetServiceDelegate, BrowserServiceDeleg
             
             hostSocket!.delegate = nil
             hostSocket = nil
+            
+            delegate?.didDisconnect?(err)
         }
         
     }
