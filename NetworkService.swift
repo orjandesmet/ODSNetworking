@@ -9,11 +9,14 @@
 import Foundation
 import CocoaAsyncSocket
 
-public protocol NetworkService {
+public protocol NetworkService : NSNetServiceDelegate, GCDAsyncSocketDelegate {
+    var delegate : NetworkingServiceDelegate? {get set}
     
     func parseHeader(data: NSData) -> Int64
-    func parseBody(data: NSData)
+    func parseBody(data: NSData, sock: GCDAsyncSocket)
+    func sendPacket(packet: Jsonable, ip: String)
     func sendPacket(packet: Jsonable, sock: GCDAsyncSocket)
+    func getSender(sock: GCDAsyncSocket) -> ODSConnection?
 }
 
 public extension NetworkService {
@@ -23,6 +26,14 @@ public extension NetworkService {
         memcpy(&headerLength, data.bytes, sizeof(Int64))
         
         return headerLength
+    }
+    
+    
+    public func parseBody(data: NSData, sock: GCDAsyncSocket) {
+        if let sender = getSender(sock)
+        {
+            delegate?.extractPacketData(data, sender: sender)
+        }
     }
     
     public func sendPacket(packet: Jsonable, sock: GCDAsyncSocket) {

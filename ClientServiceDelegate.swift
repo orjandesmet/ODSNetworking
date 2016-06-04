@@ -8,8 +8,6 @@
 
 import Foundation
 
-@objc public protocol ClientServiceDelegate {
-    func extractPacketData(data: NSData)
-    optional func didConnectToHost(host: String)
-    optional func didDisconnect(err: NSError)
+public protocol ClientServiceDelegate : NetworkingServiceDelegate {
+    
 }

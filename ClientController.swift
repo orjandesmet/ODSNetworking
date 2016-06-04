@@ -46,6 +46,11 @@ public class ClientController: NSObject {
         endBrowsing()
     }
     
+    public func disConnect()
+    {
+        clientService.disConnect(nil)
+    }
+    
     public func sendPacket(packet: Jsonable)
     {
         clientService.sendPacket(packet)
@@ -57,5 +62,10 @@ public class ClientController: NSObject {
         {
             clientService.delegate = delegate
         }
+    }
+    
+    public func getHostName() -> String
+    {
+        return (clientService.hostSocket?.connectedHost)!;
     }
 }

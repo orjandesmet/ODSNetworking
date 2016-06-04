@@ -13,22 +13,26 @@ public enum HostingDomain : String {
     case Local = "local."
 }
 
-public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDelegate, NetworkService
+public class HostingService : NSObject, NetworkService
 {
     var allowMultipleClients: Bool
     var hostingDomain : HostingDomain
     var type: String
     var name: String
-    var clientSockets: [GCDAsyncSocket] = []
+    var clientSockets: [GCDAsyncSocket : ODSConnection] = [:]
     var hostingSocket: GCDAsyncSocket?
     var service : NSNetService?
-    public var delegate : HostingServiceDelegate?
+    public var delegate : NetworkingServiceDelegate?
     
     public init(type: String, name: String, hostingDomain: HostingDomain = .Local, allowMultipleClients: Bool = true) {
         self.type = type
         self.name = name
         self.hostingDomain = hostingDomain
         self.allowMultipleClients = allowMultipleClients
+    }
+    
+    public func getSender(sock: GCDAsyncSocket) -> ODSConnection? {
+        return clientSockets[sock] // TODO may have errors
     }
     
     // Broadcasting
@@ -57,7 +61,7 @@ public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDele
     
     public func endBroadcast() {
         // Disconnect with all devices
-        for clientSocket in clientSockets
+        for clientSocket in clientSockets.keys
         {
             clearSocket(clientSocket)
         }
@@ -81,7 +85,7 @@ public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDele
         socket.delegate = nil
     }
     
-    // NSNetService delegate methods
+    // MARK - NSNetService delegate methods
     public func netServiceDidPublish(sender: NSNetService) {
         NSLog("Bonjour Service Published: domain(%@) type(%@) name(%@) port(%i)", sender.domain, sender.type, sender.name, sender.port);
     }
@@ -90,43 +94,63 @@ public class HostingService : NSObject, NSNetServiceDelegate, GCDAsyncSocketDele
         NSLog("Failed to Publish Service: domain(%@) type(%@) name(%@) - %@", sender.domain, sender.type, sender.name, errorDict);
     }
     
-    // GDAsyncSocket
+    // MARK - GDAsyncSocket
     public func socket(sock: GCDAsyncSocket!, didAcceptNewSocket newSocket: GCDAsyncSocket!) {
         NSLog("Accepted New Socket from %@:%hu", newSocket.connectedHost, newSocket.connectedPort);
         
-        // Socket 
+        // Socket
         if (!allowMultipleClients && clientSockets.count > 0)
         {
-            clearSocket(clientSockets[0])
-            clientSockets.removeAtIndex(0)
+            clearSocket(clientSockets.keys.first!) // TODO may be wrong
+            clientSockets.removeAll()
         }
-        clientSockets.append(newSocket)
+        let newConnection = ODSConnection(name: newSocket.connectedHost, ip: newSocket.connectedHost)
+        clientSockets[newSocket] = newConnection
         
         // Read Data from Socket
         newSocket.readDataToLength(UInt(sizeof(Int64)), withTimeout: -1.0, tag: 0)
-        delegate?.socketConnected(newSocket)
+        delegate?.socketDidConnect(newConnection)
     }
+    
+    public func socket(sock: GCDAsyncSocket!, didReadData data: NSData!, withTag tag: Int) {
+        if (tag == 0) {
+            let bodyLength : Int64 = self.parseHeader(data)
+            sock.readDataToLength(UInt(bodyLength), withTimeout: 30.0, tag: 1)
+            
+        } else if (tag == 1) {
+            self.parseBody(data, sock: sock)
+            sock.readDataToLength(UInt(sizeof(Int64)), withTimeout: -1.0, tag: 0)
+        }
+    }
+    
     
     public func socketDidDisconnect(sock: GCDAsyncSocket!, withError err: NSError!) {
         
-        if let index = clientSockets.indexOf(sock)
+        if let index = clientSockets.keys.indexOf(sock)
         {
-            delegate?.socketDisconnected(sock)
+            delegate?.socketDidDisconnect(clientSockets[sock], err: err)
             NSLog("Socket disconnected with Error %@ with User Info %@.", err, err.userInfo)
-            clearSocket(clientSockets[index])
+            clearSocket(clientSockets.keys[index])
             clientSockets.removeAtIndex(index)
         }
     }
     
-    public func sendPacket(packet: Jsonable, index: Int) {
-        if index < clientSockets.count
-        {
-            let sock = clientSockets[index]
+    
+    public func sendPacket(packet: Jsonable, ip: String) {
+        if let index = clientSockets.indexOf({$0.1.ip == ip}) {
+            let sock = clientSockets.keys[index]
             self.sendPacket(packet, sock: sock)
         }
     }
     
-    public func parseBody(data: NSData) {
-        delegate?.extractPacketData(data)
+    public func sendPacketToAll(packet: Jsonable) {
+        for sock in clientSockets.keys
+        {
+            self.sendPacket(packet, sock: sock)
+        }
+    }
+    
+    public func parseBody(data: NSData, sock: GCDAsyncSocket) {
+        delegate?.extractPacketData(data, sender: getSender(sock)!)
     }
 }

@@ -38,8 +38,13 @@ public class HostingController: NSObject {
         hostingService?.delegate = delegate
     }
     
-    public func sendPacket(packet: Jsonable, sock: GCDAsyncSocket)
+    public func sendPacket(packet: Jsonable, ip: String)
     {
-        hostingService?.sendPacket(packet, sock: sock);
+        hostingService?.sendPacket(packet, ip: ip);
+    }
+    
+    public func sendPacketToAll(packet: Jsonable)
+    {
+        hostingService?.sendPacketToAll(packet)
     }
 }

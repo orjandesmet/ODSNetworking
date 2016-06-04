@@ -13,6 +13,10 @@
 		8F1C12401CEDD2FB00EF2ADC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C123E1CEDD2FB00EF2ADC /* NetworkService.swift */; };
 		8F224A551CD5F11F0006859F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F224A541CD5F11F0006859F /* CFNetwork.framework */; };
 		8F224A571CD5F1270006859F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F224A561CD5F1270006859F /* Security.framework */; };
+		8F2964511D02CC5B00BC3C05 /* NetworkingServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2964501D02CC5B00BC3C05 /* NetworkingServiceDelegate.swift */; };
+		8F2964521D02CC6400BC3C05 /* NetworkingServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2964501D02CC5B00BC3C05 /* NetworkingServiceDelegate.swift */; };
+		8F2964541D02D92500BC3C05 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2964531D02D92500BC3C05 /* Connection.swift */; };
+		8F2964551D02D99500BC3C05 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2964531D02D92500BC3C05 /* Connection.swift */; };
 		8F7DA89F1CD561500013FFDB /* BrowserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DA89D1CD561500013FFDB /* BrowserService.swift */; };
 		8F7DA8B41CD5ED460013FFDB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7DA8B31CD5ED460013FFDB /* CFNetwork.framework */; };
 		8F7DA8B61CD5ED4C0013FFDB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7DA8B51CD5ED4C0013FFDB /* Security.framework */; };
@@ -92,6 +96,8 @@
 		8F1C123E1CEDD2FB00EF2ADC /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8F224A541CD5F11F0006859F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8F224A561CD5F1270006859F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8F2964501D02CC5B00BC3C05 /* NetworkingServiceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingServiceDelegate.swift; sourceTree = "<group>"; };
+		8F2964531D02D92500BC3C05 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		8F7DA89D1CD561500013FFDB /* BrowserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserService.swift; sourceTree = "<group>"; };
 		8F7DA8B31CD5ED460013FFDB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		8F7DA8B51CD5ED4C0013FFDB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS9.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
@@ -191,6 +197,8 @@
 				8FF9773B1CD11E59005F5A70 /* ExamplePacket.swift */,
 				8FF9773E1CD11E75005F5A70 /* Jsonable.swift */,
 				8F1C123E1CEDD2FB00EF2ADC /* NetworkService.swift */,
+				8F2964501D02CC5B00BC3C05 /* NetworkingServiceDelegate.swift */,
+				8F2964531D02D92500BC3C05 /* Connection.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -483,8 +491,10 @@
 				8FBBDFE81CFD9E1F00042D96 /* HostingController.swift in Sources */,
 				8F1C123F1CEDD2FB00EF2ADC /* NetworkService.swift in Sources */,
 				8FF977421CD129A3005F5A70 /* HostingService.swift in Sources */,
+				8F2964541D02D92500BC3C05 /* Connection.swift in Sources */,
 				8FF9773C1CD11E59005F5A70 /* ExamplePacket.swift in Sources */,
 				8FF9773F1CD11E75005F5A70 /* Jsonable.swift in Sources */,
+				8F2964511D02CC5B00BC3C05 /* NetworkingServiceDelegate.swift in Sources */,
 				8FEAA7BA1CD8BAFE00F7614C /* HostingServiceDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +511,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F2964551D02D99500BC3C05 /* Connection.swift in Sources */,
 				8FBBDFE91CFD9E1F00042D96 /* HostingController.swift in Sources */,
 				8FF977431CD129A3005F5A70 /* HostingService.swift in Sources */,
 				8F1C123D1CEDCC6A00EF2ADC /* ClientServiceDelegate.swift in Sources */,
@@ -511,6 +522,7 @@
 				8F7DA89F1CD561500013FFDB /* BrowserService.swift in Sources */,
 				8F1C123B1CEDCADE00EF2ADC /* ClientService.swift in Sources */,
 				8FF977401CD11E75005F5A70 /* Jsonable.swift in Sources */,
+				8F2964521D02CC6400BC3C05 /* NetworkingServiceDelegate.swift in Sources */,
 				8FBBDFEB1CFDA28800042D96 /* ClientController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
